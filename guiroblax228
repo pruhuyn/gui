@@ -1,0 +1,25 @@
+-- MyUILibrary.lua
+local Library = {}
+
+function Library:CreateWindow(title)
+    local ScreenGui = Instance.new("ScreenGui")
+    local Frame = Instance.new("Frame")
+    local Title = Instance.new("TextLabel")
+
+    -- Настройка GUI
+    ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    Frame.Parent = ScreenGui
+    Frame.Size = UDim2.new(0, 400, 0, 300)
+    Frame.Position = UDim2.new(0.5, -200, 0.5, -150)
+    Frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+
+    Title.Parent = Frame
+    Title.Size = UDim2.new(1, 0, 0.2, 0)
+    Title.Text = title
+    Title.TextColor3 = Color3.new(1, 1, 1)
+    Title.BackgroundColor3 = Color3.new(0.1, 0.1, 0.1)
+
+    return Frame
+end
+
+return Library
